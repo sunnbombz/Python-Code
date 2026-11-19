@@ -49,4 +49,15 @@ def audit_endpoints(metrics):
     print(f"Passed: {counter} of {leng} endpoints within target.")
     
 
-audit_endpoints(endpoint_latency_dict)
+#audit_endpoints(endpoint_latency_dict)
+
+def get_average_latency(metrics):
+    total = 0
+    leng = len(metrics.items())
+    for value in metrics.values():
+        total += value
+    average = total / leng
+    return average
+
+
+print(get_average_latency(endpoint_latency_dict))
